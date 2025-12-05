@@ -180,27 +180,6 @@ export const ShortcutManager = () => {
         </div>
       )}
 
-      {/* License Prompt for Non-Licensed Users */}
-      {!hasActiveLicense && (
-        <Card className="p-4 bg-primary/5 border-primary/20">
-          <div className="flex items-start gap-3">
-            <Lock className="size-4 lg:size-5 text-primary mt-0.5" />
-            <div className="flex-1 space-y-2">
-              <p className="text-xs lg:text-sm font-medium">
-                Unlock Shortcut Customization
-              </p>
-              <p className="text-[10px] lg:text-xs text-muted-foreground">
-                Get a license to customize keyboard shortcuts to your
-                preference.
-              </p>
-              <GetLicense
-                buttonText="Get License"
-                buttonClassName="w-full mt-2"
-              />
-            </div>
-          </div>
-        </Card>
-      )}
 
       {/* Flat Shortcuts List */}
       <div className="space-y-3">

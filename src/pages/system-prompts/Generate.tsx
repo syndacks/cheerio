@@ -100,37 +100,23 @@ export const GenerateSystemPrompt = ({
 
           {error && <p className="text-xs text-destructive">{error}</p>}
 
-          {hasActiveLicense ? (
-            <Button
-              className="w-full"
-              onClick={handleGenerate}
-              disabled={!userPrompt.trim() || isGenerating}
-            >
-              {isGenerating ? (
-                <>
-                  <SparklesIcon className="h-4 w-4 animate-pulse" />
-                  Generating...
-                </>
-              ) : (
-                <>
-                  <SparklesIcon className="h-4 w-4" />
-                  Generate
-                </>
-              )}
-            </Button>
-          ) : (
-            <div className="w-full flex flex-col gap-3">
-              <p className="text-sm font-medium text-muted-foreground">
-                You need an active license to use this feature. Click the button
-                below to get a license.
-              </p>
-              <GetLicense
-                buttonText="Get License"
-                buttonClassName="w-full"
-                setState={setIsOpen}
-              />
-            </div>
-          )}
+          <Button
+            className="w-full"
+            onClick={handleGenerate}
+            disabled={!userPrompt.trim() || isGenerating}
+          >
+            {isGenerating ? (
+              <>
+                <SparklesIcon className="h-4 w-4 animate-pulse" />
+                Generating...
+              </>
+            ) : (
+              <>
+                <SparklesIcon className="h-4 w-4" />
+                Generate
+              </>
+            )}
+          </Button>
         </div>
       </PopoverContent>
     </Popover>
