@@ -4,7 +4,6 @@ import {
   AutoScrollToggle,
 } from "./components";
 import { PageLayout } from "@/layouts";
-import { useApp } from "@/contexts";
 
 const Responses = () => {
   return (
