@@ -44,7 +44,10 @@
       "icons/icon.ico"
     ],
     "resources": ["info.plist", "pluely.desktop"],
-    "macOS": { "minimumSystemVersion": "10.13" }
+    "macOS": {
+      "minimumSystemVersion": "10.13",
+      "entitlements": "dev.entitlements"
+    }
   },
   "plugins": {
     "sql": {

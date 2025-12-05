@@ -516,9 +516,12 @@ pub fn check_system_audio_access(_app: AppHandle) -> Result<bool, String> {
 pub async fn request_system_audio_access(app: AppHandle) -> Result<(), String> {
     #[cfg(target_os = "macos")]
     {
+        // Open Screen Recording settings (which includes System Audio Recording in macOS Ventura+)
+        // For older macOS versions, this will open Screen Recording; users may need to manually
+        // navigate to the correct permission section
         app.shell()
             .command("open")
-            .args(["x-apple.systempreferences:com.apple.preference.security?Privacy_AudioCapture"])
+            .args(["x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture"])
             .spawn()
             .map_err(|e| {
                 error!("Failed to open system preferences: {}", e);

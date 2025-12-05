@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Standard audio input (microphone) permission -->
+    <key>com.apple.security.device.audio-input</key>
+    <true/>
+
+    <!-- Microphone access (duplicate for compatibility) -->
+    <key>com.apple.security.device.microphone</key>
+    <true/>
+
+    <!-- Allow capturing screen and system audio -->
+    <key>com.apple.security.device.camera</key>
+    <false/>
+
+    <!-- Disable library validation for development (allows unsigned libs) -->
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <true/>
+
+    <!-- Allow loading unsigned executable code (dev only) -->
+    <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+    <true/>
+
+    <!-- Allow DYLD environment variables (dev only) -->
+    <key>com.apple.security.cs.allow-dyld-environment-variables</key>
+    <true/>
+
+    <!-- Hardened runtime - allow JIT compilation (for some audio libraries) -->
+    <key>com.apple.security.cs.allow-jit</key>
+    <true/>
+
+    <!-- Network permissions (for API calls to STT/AI providers) -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+
+    <key>com.apple.security.network.server</key>
+    <true/>
+
+    <!-- App Sandbox disabled for development (required for system audio TAP) -->
+    <key>com.apple.security.app-sandbox</key>
+    <false/>
+
+    <!-- File access for saving recordings and data -->
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+
+    <!-- Temporary exception for Apple Events (may help with system preferences) -->
+    <key>com.apple.security.temporary-exception.apple-events</key>
+    <true/>
+
+    <!-- Core Audio aggregation device creation -->
+    <key>com.apple.security.temporary-exception.audio-unit-host</key>
+    <true/>
+</dict>
+</plist>
